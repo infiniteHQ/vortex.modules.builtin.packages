@@ -1,4 +1,3 @@
-#include "../../include/vortex.h"
 #include "./src/module.h"
 #include "./src/instances/packageInstance/PackageRenderInstance.h"
 
