@@ -1,8 +1,7 @@
 #include <Vortex/main/include/vortex.h>
 #include <Vortex/main/include/vortex_internals.h>
 #include <Vortex/tools/editor/app/include/editor.h>
-
-#include "../../vortex.modules.builtin.tasks/src/module.h"
+#include <Vortex/modules/vortex.modules.builtin.tasks.1.1.0/src/module.h>
 
 #ifndef __PACKAGE__MODULE_H__
 #define __PACKAGE__MODULE_H__
