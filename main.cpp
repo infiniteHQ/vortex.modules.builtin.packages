@@ -1,6 +1,8 @@
 #include "./src/module.h"
 #include "./src/instances/packageInstance/PackageRenderInstance.h"
 
+const std::string module_version = "1.1.0";
+
 #ifndef CPackagesModule
 PackagesModuleCTX *CPackagesModule = NULL;
 #endif
@@ -29,6 +31,16 @@ public:
         // Adding events
         this->AddInputEvent(PackageModule::LaunchPackageInterface, "LaunchPackageInterface");
         this->AddInputEvent(PackageModule::FindPackages, "FindPackages");
+
+        this->AddInputEvent(
+            PackageModule::FindPackages, // Function
+            "_FindPackages", // Name of event
+            DevFlag::READY, // State of event
+            "This is a cool feature", // Description
+            {{"path", "std::string", "This is the path of the projct"}, // Args definition (for documentation only) Order : Name, C++ Type, Description
+             {"packages", "std::vector<std::shared_ptr<Package>>", "Packages list to increment"},
+             {"list", "std::vector<std::shared_ptr<PackageInterface>>", "List of packages interface"}},
+            false);
 
         // Execute main functions
         this->ExecFunction("RegisterPackages");
